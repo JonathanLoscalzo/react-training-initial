@@ -6,7 +6,8 @@
   "author": "JonathanLoscalzo",
   "license": "MIT",
   "scripts": {
-    "create": "webpack"
+    "start": "webpack-dev-server --open",
+    "create-dist": "webpack"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
