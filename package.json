@@ -1,0 +1,8 @@
+{
+  "name": "react-training-initial",
+  "version": "1.0.0",
+  "description": "initial training/sandbox for React without create-react-app command (webpack2, npm). (From ReactTraining)",
+  "main": "index.js",
+  "author": "JonathanLoscalzo",
+  "license": "MIT"
+}
