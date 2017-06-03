@@ -1,8 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * @note debería ser un stateless functional, o stateless component
+ */
 
-
+class Language extends React.Component {
+    render() {
+        var lang = this.props.lang;
+        return (
+            <li 
+                onClick={() => this.props.onSelect(lang)}
+                style={lang === this.props.selected ? { color: '#d0021b' } : null}>
+                {lang}
+            </li>
+        )
+    }
+}
 class SelectLanguage extends React.Component {
 
     static propTypes = {
@@ -28,17 +42,12 @@ class SelectLanguage extends React.Component {
             "Python"
         ];
 
-        const {selected, onSelect} = this.props;
+        const { selected, onSelect } = this.props;
 
         return (
             <ul className="languages">
-                {languages.map(
-                    (lang) =>
-                        <li key={lang}
-                            onClick={() => onSelect(lang)}
-                            style={lang === selected ? { color: '#d0021b' } : null}>
-                            {lang}
-                        </li>)}
+                {languages
+                    .map((lang) => (<Language lang={lang} key={lang} onSelect={onSelect} selected={selected}/>))}
             </ul>)
     }
 
