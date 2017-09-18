@@ -105,6 +105,7 @@ export default class Popular extends React.Component {
             selectLanguage: "All",
             repos: []
         }
+        this.Api = new Api();
     }
 
     componentDidMount() {
@@ -116,8 +117,8 @@ export default class Popular extends React.Component {
             selectLanguage: lang,
             repos: []
         });
-
-        Api.fetchPopularRepos(lang)
+        console.log(this.Api);
+        this.Api.fetchPopularRepos(lang)
             .then((data) => {
                 this.setState({ repos: data });
             });
